@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Producto - Nuevo</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="container">
+    <h2>Producto <span class="nuevo">Nuevo</span></h2>
+
+    <div class="form-grid">
+      <!-- Columna 1 -->
+      <div class="form-section">
+        <h3>Información General</h3>
+
+        <label>Código de Barra (*)</label>
+        <input type="text" placeholder="000000047490" />
+
+        <label>Nombre de Producto (*)</label>
+        <input type="text" placeholder="Ingrese el Nombre del Producto" />
+
+        <label>P. Activo</label>
+        <select><option>Seleccionar</option></select>
+
+        <label>Patología</label>
+        <select><option>Seleccionar</option></select>
+
+        <label>Fecha de Caducidad (*)</label>
+        <input type="date" />
+
+        <label>Laboratorio (*)</label>
+        <select><option>Seleccionar</option></select>
+
+        <label>Ubicación</label>
+        <select><option>Seleccionar</option></select>
+      </div>
+
+      <!-- Columna 2 -->
+      <div class="form-section">
+        <h3>Detalles y Stock</h3>
+
+        <label>Categoría (*)</label>
+        <select><option>Seleccionar</option></select>
+
+        <label>¿Para qué sirve?</label>
+        <textarea placeholder="Descripción breve del producto..."></textarea>
+
+        <label>Stock Unitario del Producto (*)</label>
+        <input type="text" placeholder="Stock Unitario del Producto" />
+
+        <label>Stock Mínimo del Producto (*)</label>
+        <input type="text" placeholder="Stock Mínimo del Producto" />
+
+        <label>Precio Venta</label>
+        <input type="text" placeholder="Precio de Empaque" />
+
+        <label>Stock Caja</label>
+        <input type="text" placeholder="Stock Caja" />
+
+        <label>Subir Foto</label>
+        <input type="file" />
+      </div>
+
+      <!-- Columna 3 -->
+      <div class="form-section">
+        <h3>Precios del Producto</h3>
+
+        <label>% Utilidad (*)</label>
+        <input type="text" placeholder="% Ganancia" />
+
+        <label>Presentación Caja</label>
+        <input type="text" placeholder="Precio de Costo caja" />
+
+        <label>Unidades x caja</label>
+        <input type="text" placeholder="Unidades en la caja" />
+
+        <label>Unidad de medida (*)</label>
+        <select><option>CAJA</option></select>
+
+        <label>Presentación Unitaria</label>
+        <input type="text" placeholder="Precio de Costo Unitario" />
+
+        <label>PVP 1 Unidades</label>
+        <input type="text" placeholder="Precio al público unidad" />
+
+        <label>PVP 2 Unidades</label>
+        <input type="text" placeholder="Precio al público 2 unidades" />
+
+        <label>PVP 3 Unidades</label>
+        <input type="text" placeholder="Precio al público 3 unidades" />
+
+        <label>Presentación Blister</label>
+        <input type="text" placeholder="Precio de Blister" />
+
+        <label>Unidades x Blister</label>
+        <input type="text" placeholder="Cantidad Blister" />
+      </div>
+    </div>
+
+    <!-- Opciones de impuestos y receta -->
+    <div class="checkbox-group">
+      <label><input type="radio" name="impuesto" /> Exonerada</label>
+      <label><input type="radio" name="impuesto" checked /> Gravada</label>
+      <label><input type="checkbox" /> Venta con Receta</label>
+    </div>
+
+    <!-- Selección de farmacias -->
+    <div class="checkbox-list">
+      <label><input type="checkbox" checked /> Farmacia mi Perú 1</label>
+      <label><input type="checkbox" checked /> Farmacia mi Perú 2</label>
+      <label><input type="checkbox" checked /> Farmacia mi Perú 3</label>
+      <label><input type="checkbox" checked /> Farmacia mi Perú 4</label>
+      <label><input type="checkbox" checked /> Farmacia mi Perú 5</label>
+      <label><input type="checkbox" checked /> Farmacia mi Perú 6</label>
+      <label><input type="checkbox" checked /> Farmacia mi Perú 7</label>
+    </div>
+
+    <!-- Botones de acción -->
+    <div class="form-actions">
+      <button class="guardar">Guardar</button>
+      <button class="cancelar">Cancelar</button>
+    </div>
+  </div>
+</body>
+</html>

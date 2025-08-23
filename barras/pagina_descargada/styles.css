@@ -1,0 +1,129 @@
+/* Estilo general */
+body {
+  font-family: Arial, sans-serif;
+  background: #000;  /* 🔥 Fondo negro */
+  color: #fff;       /* 🔥 Texto blanco para contraste */
+  margin: 0;
+  padding: 20px;
+}
+
+.container {
+  background: #fff;
+  padding: 25px 35px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  max-width: 1600px; /* más ancho para 3 columnas */
+  margin: auto;
+  box-sizing: border-box;
+}
+
+h2 {
+  margin-bottom: 20px;
+}
+
+.nuevo {
+  font-size: 14px;
+  color: gray;
+}
+
+/* Formulario en 3 columnas */
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr; /* tres columnas iguales */
+  gap: 30px;
+}
+
+/* Estilo de cada sección */
+.form-section h3 {
+  border-bottom: 2px solid #e0e0e0;
+  padding-bottom: 8px;
+  margin-bottom: 20px;
+  color: #333;
+  font-size: 18px;
+}
+
+label {
+  display: block;
+  font-size: 14px;
+  margin-top: 12px;
+  margin-bottom: 6px;
+  color: #333;
+}
+
+/* Inputs generales */
+input[type="text"],
+input[type="date"],
+input[type="file"],
+select,
+textarea {
+  width: 100%;
+  padding: 10px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  box-sizing: border-box;
+}
+
+textarea {
+  height: 70px;
+  resize: vertical;
+}
+
+/* Grupos de checkboxes y radios */
+.checkbox-group,
+.checkbox-list {
+  margin: 20px 0;
+}
+
+.checkbox-group label,
+.checkbox-list label {
+  display: block;
+  font-size: 14px;
+  margin-bottom: 6px;
+}
+
+/* Acciones */
+.form-actions {
+  margin-top: 30px;
+  text-align: right;
+}
+
+/* Botones */
+button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 6px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+button.guardar {
+  background: #28a745;
+  color: white;
+}
+
+button.guardar:hover {
+  background: #218838;
+}
+
+button.cancelar {
+  background: #dc3545;
+  color: white;
+  margin-left: 12px;
+}
+
+button.cancelar:hover {
+  background: #c82333;
+}
+
+/* Responsivo: si pantalla es pequeña, cambia a 1 columna */
+@media (max-width: 1000px) {
+  .form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .form-actions {
+    text-align: center;
+  }
+}

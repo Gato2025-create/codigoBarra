@@ -1,0 +1,167 @@
+.btn-primary {
+    color: #24CAFF;
+    background-color: white;
+    border: 1px solid #24CAFF;
+	  font-family: 'Barlow', sans-serif;
+	
+  }
+  .btn-success {
+    color: #24CAFF;
+    background-color: white;
+    border-color: #24CAFF;
+  }
+  .form-control {
+	border: 1px solid #24CAFF;
+
+  }
+
+  .panel{
+	box-shadow: 5px 7px 19px 0px rgba(0,0,0,0.26);
+	border: 0px;
+  }
+  .panel-success, .panel-success>.panel-heading {
+    border-color:white;
+  }
+
+  .panel-success>.panel-heading {
+
+    border-color: #24CAFF;
+  }
+
+
+   /* PRUBAAA */
+
+  .productos{
+	padding: 0px;
+  } 
+
+  .container{
+	margin: 0px; padding: 0px; width: 100%;
+  }
+
+  .carousel-indicators{
+	margin: 0px; font-size: 1vw;
+  }
+
+  .rowMOD1{
+	background-color: #24CAFF;
+  }
+
+  .rowMOD1 .page-header{
+	border: 0px; padding:0px;
+  }
+
+  .rowMOD1 .page-header > h1{
+	color: white; font-family: 'Barlow', sans-serif;
+  }
+
+  .rowMOD2{
+	background-color: #24CAFF; border-bottom: 50px solid #24CAFF; display: flex; justify-content: center;
+  }
+
+  .rowMOD2 .col-lg-2{
+	padding: 0px;
+  }
+
+  .rowMOD3{
+	margin: 0px 10%;
+  }
+
+  .rowMOD3 .text-center{
+    font-size: 90%;
+  }
+
+  .rowMOD3 .panel-success{
+	border-radius: 20px; padding:0px;
+  }
+
+  .rowMOD3 .panel-success > .panel-heading{
+	background-color: #24CAFF; border-radius: 20px 20px 0px 0px;
+  }
+
+
+
+  /* SLIDER */
+
+  .item{
+    max-width: 100%;
+  }
+
+  .item img{
+
+    width: 100%;
+  }
+
+  /*ESTILOS DEL BOTON CATEGORIAS*/
+  .btnC{
+    margin-left: 6vw;	
+  }
+
+  .btnC li{
+    list-style: none;
+    font-size: 1vw;
+  }
+
+  
+
+#prefetch{
+  width: 35%;
+}
+@media screen and (max-width: 500px) {	
+.btnC{
+  margin-left: -10vw !important;
+  margin-right: 15%; 
+ }
+ #prefetch{
+   position: absolute;
+   margin-top: 10%;
+   width: 100%;
+ }
+ 
+} 
+.prueba > li{
+  background-color: white;
+  padding: 6px 12px;
+  border-radius: 4px;
+
+  
+}
+.prueba > li > a{
+  color: #24CAFF;
+  font-family: 'Barlow', sans-serif;
+  display: block !important; 
+  padding: 0.5px 5px !important;
+}
+.categ{
+  position: absolute !important;
+  display: none;
+  list-style: none !important;
+  width: auto !important;
+  padding: 2px 10px;
+  background-color: white;
+  border: 1px solid #E4E7E4;
+  border-radius: 6px;  
+  margin-left: -25px;
+  z-index: 4;
+}
+.categ li{
+  font-family: 'Barlow', sans-serif;
+  
+}
+
+.categ li a{
+  color: #666666;
+}
+
+.prueba > li:hover .categ{
+  display: block;
+}
+
+.ui-menu-item{
+  float: none;
+}
+
+.btn-warning {
+    background-color: #24CAFF !important;
+    border-color: #24CAFF !important;
+}

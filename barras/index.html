@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Lector de Código de Barras - Inventario</title>
+  <link rel="stylesheet" href="/styles.css" />
+</head>
+<body>
+  <h1>Lector de Código de Barras - Inventario</h1>
+
+  <!-- Sección de búsqueda -->
+  <label for="codigoInput">Escanea o ingresa el código:</label><br />
+  <input type="text" id="codigoInput" placeholder="Código de barras" autofocus />
+  <button id="buscarBtn">Buscar y Mostrar</button>
+
+  <div id="imgProducto" style="margin-top: 1rem;"></div>
+  <pre id="infoProducto" aria-live="polite" role="region"></pre>
+
+  <hr>
+
+  <!-- Botón para mostrar formulario de modificación -->
+  <button id="btnMostrarFormulario" disabled>✏️ Modificar Producto</button>
+
+  <!-- Formulario de producto -->
+  <form id="formProducto" style="display:none; margin-top:1rem;">
+    <fieldset>
+      <legend>Información Básica</legend>
+      
+      <label for="nombre">Nombre del Producto:</label><br>
+      <input type="text" id="nombre" name="nombre" required><br><br>
+
+      <label for="codigo_barras">Código de Barras:</label><br>
+      <input type="text" id="codigo_barras" name="codigo_barras" required readonly><br><br>
+
+      <label for="categoria">Categoría / Tipo:</label><br>
+      <input type="text" id="categoria" name="categoria"><br><br>
+
+      <label for="forma_farmaceutica">Forma Farmacéutica:</label><br>
+      <input type="text" id="forma_farmaceutica" name="forma_farmaceutica"><br><br>
+
+      <label for="concentracion">Concentración / Dosis:</label><br>
+      <input type="text" id="concentracion" name="concentracion"><br><br>
+    </fieldset>
+
+    <fieldset>
+      <legend>Información Adicional</legend>
+      
+      <label for="laboratorio">Laboratorio / Fabricante:</label><br>
+      <input type="text" id="laboratorio" name="laboratorio"><br><br>
+
+      <label for="caducidad">Fecha de Caducidad:</label><br>
+      <input type="date" id="caducidad" name="caducidad"><br><br>
+
+      <label for="lote">Número de Lote:</label><br>
+      <input type="text" id="lote" name="lote"><br><br>
+
+      <label for="precio_compra">Precio de Compra:</label><br>
+      <input type="number" step="0.01" id="precio_compra" name="precio_compra"><br><br>
+
+      <label for="precio_venta">Precio de Venta:</label><br>
+      <input type="number" step="0.01" id="precio_venta" name="precio_venta"><br><br>
+
+      <label for="stock_unitario">Cantidad en Stock:</label><br>
+      <input type="number" id="stock_unitario" name="stock_unitario"><br><br>
+    </fieldset>
+
+    <div style="margin-top:1rem;">
+      <button type="submit">💾 Guardar Cambios</button>
+      <button type="reset">❌ Cancelar</button>
+    </div>
+  </form>
+
+  <script>
+    // --- LECTOR DE CÓDIGOS ---
+    const inputCodigo = document.getElementById('codigoInput');
+    const btnBuscar = document.getElementById('buscarBtn');
+    const infoProducto = document.getElementById('infoProducto');
+    const imgProducto = document.getElementById('imgProducto');
+
+    // Botón y formulario
+    const btnMostrarFormulario = document.getElementById('btnMostrarFormulario');
+    const formProducto = document.getElementById('formProducto');
+
+    async function procesarCodigo() {
+      const codigo = inputCodigo.value.trim();
+      if (!codigo) {
+        alert("⚠️ El código está vacío. Intenta nuevamente.");
+        return;
+      }
+
+      try {
+        const res = await fetch(`/buscar/${codigo}`);
+        if (!res.ok) throw new Error("Producto no encontrado");
+
+        const producto = await res.json();
+
+        // Mostrar datos en pantalla
+        const texto = `
+Nombre Comercial : ${producto.nombre}
+Código de Barras : ${producto.codigo_barras}
+Unidad de Medida : ${producto.unidad_medida}
+Precio Unitario  : $${parseFloat(producto.precio_unit).toFixed(2)}
+Precio Caja      : $${parseFloat(producto.precio_caja).toFixed(2)}
+Precio Blíster   : $${parseFloat(producto.precio_blister).toFixed(2)}
+Stock Disponible : ${producto.stock_unitario} unidades
+Laboratorio      : ${producto.laboratorio}
+Opciones Extra   : ${producto.opciones || "N/A"}
+        `.trim();
+
+        infoProducto.textContent = texto;
+        imgProducto.innerHTML = producto.imagen
+          ? `<img src="${producto.imagen}" alt="${producto.nombre}" width="200">`
+          : `<p>📦 Producto sin imagen</p>`;
+
+        // Habilitar botón de modificar
+        btnMostrarFormulario.disabled = false;
+
+        // Rellenar formulario automáticamente
+        document.getElementById("nombre").value = producto.nombre || "";
+        document.getElementById("codigo_barras").value = producto.codigo_barras || "";
+        document.getElementById("categoria").value = producto.categoria || "";
+        document.getElementById("forma_farmaceutica").value = producto.forma_farmaceutica || "";
+        document.getElementById("concentracion").value = producto.concentracion || "";
+        document.getElementById("laboratorio").value = producto.laboratorio || "";
+        document.getElementById("caducidad").value = producto.caducidad || "";
+        document.getElementById("lote").value = producto.lote || "";
+        document.getElementById("precio_compra").value = producto.precio_compra || "";
+        document.getElementById("precio_venta").value = producto.precio_venta || "";
+        document.getElementById("stock_unitario").value = producto.stock_unitario || "";
+
+        inputCodigo.value = "";
+        inputCodigo.focus();
+      } catch (error) {
+        alert(error.message);
+        infoProducto.textContent = "";
+        imgProducto.innerHTML = "";
+        btnMostrarFormulario.disabled = true;
+        inputCodigo.focus();
+      }
+    }
+
+    btnBuscar.addEventListener('click', procesarCodigo);
+    inputCodigo.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter') procesarCodigo();
+    });
+
+    // Mostrar formulario cuando se pulsa el botón
+    btnMostrarFormulario.addEventListener('click', () => {
+      formProducto.style.display = formProducto.style.display === "none" ? "block" : "none";
+    });
+
+    // Guardar cambios (aquí todavía solo frontend)
+    formProducto.addEventListener('submit', (e) => {
+      e.preventDefault();
+
+      const datos = new FormData(formProducto);
+      const producto = Object.fromEntries(datos.entries());
+
+      console.log("🔄 Producto modificado:", producto);
+
+      alert("✅ Producto modificado (por ahora solo en frontend).");
+      formProducto.style.display = "none";
+    });
+  </script>
+</body>
+</html>

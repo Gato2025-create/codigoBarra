@@ -1,0 +1,217 @@
+<!doctype html><html translate="no" lang="es"><head><script>window.prerenderReady = false;</script><script>window.accessPoint = "WEB";
+    console.log("🚀 ~ accessPoint:", accessPoint)
+
+    function fromAppNative() {
+      window.accessPoint = "APP";
+      console.log('welcome', window.accessPoint)
+      if(window.setCookie){
+       window.setCookie("_IL-app-hybrid",0);
+      }
+      setTimeout(() => {
+        window.setCookie("_IL-app-hybrid",0);
+        window.accessPoint = "APP";
+        console.log('timeout', window.accessPoint)
+        return window.accessPoint || 'success'
+      }, 10000);
+      return window.accessPoint || 'callled'
+    }</script><link href="https://fonts.googleapis.com" rel="dns-prefetch"/><link href="//securepubads.g.doubleclick.net" rel="dns-prefetch"><link href="//www.googletagmanager.com" rel="dns-prefetch"><link href="//www.google-analytics.com" rel="dns-prefetch"><link href="//ik.imagekit.io" rel="dns-prefetch"><link href="//analytics.tiktok.com" rel="dns-prefetch"><link href="//googleadservices.com" rel="dns-prefetch"><link href="//configusa.veinteractive.com" rel="dns-prefetch"><base href="/"/><meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate"/><meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=5"/><script src="cookies.js" rel="preload"></script><script>window.dataLayer = [];
+        window.gtag = (a, b, c) => window.dataLayer.push([a, b, c]);</script><link rel="icon" href="https://ecommerce-image-catalog.s3.us-east-1.amazonaws.com/la-ecomomia/EcoApp-01.png" type="image/png"/><meta name="google" content="notranslate"/><title>Droguería La Economía | Comprometidos con tu bienestar</title><link title="logo" rel="preload" href="https://ecommerce-image-catalog.s3.us-east-1.amazonaws.com/la-ecomomia/logoeco_resized+(1).png" as="image" fetchpriority="high"/><link href="cart.png" as="image" rel="preload" fetchpriority="high"/><link as="style" rel="stylesheet preload prefetch" href="https://fonts.googleapis.com/css?family=Nunito&display=swap" crossorigin="anonymous"/><style>@import url('https://fonts.cdnfonts.com/css/poppins')</style><style>/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+* {
+  font-family: var(--typography-type-primary);
+}
+body {
+  margin: 0;
+  -webkit-overflow-scrolling: touch;
+  overscroll-behavior: none;
+  background: #fafafa;
+}</style><style>*{--color-primary: #1C58B7;--color-primary-hover: #1C58B7CC;--color-primary-opacity-ten:#1C58B71A;--color-primary-checked: #1C58B70A;--color-primary2: #E1251B;--color-crossed-color-price:var(--color-black2);--color-cross-out-save-display:none;--app-universal-bar-background:#333;--app-universal-bar-height:40px;--app-brand-logo-background-active:#ffffff4f;--app-brand-logo-background-hover:#ffffff24;--app-brand-logo-max-width:165px;--app-brand-font-color:#ffffff24;--app-brand-font-weight:400;--app-background-mobile:var(--background-app);--app-background-desktop:var(--background-app);--app-header-background-mobile:#E1251B;--app-header-background-desktop:#E1251B;--app-footer-background-desktop:#E1251B;--app-footer-background-mobile:#E1251B;--product-minQty-color:var(--color-black1);--product-nxp-backgroundColor:#db0617;--product-nxp-color:#ffffff;--product-special-price-color:var(--color-error);--product-price-color:#1C58B7;--app-header-background:#ffffff;--app-subheader-background-desktop:var(--color-offWhite);--app-subheader-background-mobile:var(--color-offWhite);--app-subheader-color-mobile:var(--color-black);--app-subheader-color-desktop:var(--color-black);--app-header-fontsize-s1:13px;--app-header-fontsize-s2:14px;--app-header-fontsize-s3:16px;--app-subheader-fontsize-s1:13px;--app-subheader-fontsize-s2:14px;--app-subheader-fontsize-s3:16px;--app-location-font-color-mobile:var(--color-black);--app-location-font-color-desktop:var(--color-black);--app-location-icon-color-mobile:#1C58B7;--app-location-icon-color-desktop:#1C58B7;--cart-detail-card-product-small-width: 312px;--header-height: 72px;--header-height-small: 116px;--header-height-category-small: 56px;--showcase-subheader-height: 182px;--z-index-9: 9;--z-index-10: 10;--z-index-11: 11;--z-index-12: 12;--container-max-width-default: 1600px;--container-max-width-large: 1600px;--container-max-width-medium: 960px;--container-max-width-small: 460px;--container-border-padding: 40px;--container-border-padding-mobile: 10px;--app-header-background-mobile-v3:var(--color-primary);--app-header-background-desktop-v3:var(--color-primary);--app-header-color-mobile-v3:var(--color-offWhite);--app-header-color-desktop-v3:var(--color-offWhite);--app-subheader-background-mobile-v3:var(--color-offWhite);--app-subheader-background-desktop-v3:var(--color-offWhite);--app-subheader-color-mobile-v3:var(--color-black);--app-subheader-color-desktop-v3:var(--color-black);--app-header-overlay-desktop-v3:linear-gradient( 0deg, rgba(255,255,255,0.25) 0%, rgba(255,255,255,0.25) 100% );--typography-type-primary:"Nunito", sans-serif;--typography-weight-semiLight:300;--typography-weight-normal:400;--typography-weight-semiRegular:500;--typography-weight-semiBold:600;--typography-weight-bold:700;--typography-weight-extrabold:800;--typography-weight-black:900;--typography-weight-primary:400;--social-network-icon-background:#ccd1d1;--social-network-icon-color:#fdfefe;}</style><style data-skeleton="prod v3">.skeleton.main-loader {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 50px;
+  width: 100%;
+}
+
+.skeleton.header.v3 {
+  width: 100vw;
+  z-index: var(--z-index-9);
+  box-shadow: var(--shadow-boxShadow);
+  display: grid;
+  grid-template-areas:
+    'main'
+    'secondary';
+  grid-template-rows: 94px 40px;
+
+}
+
+.skeleton.header.v3 .header__main {
+  grid-area: main;
+  background-color: var(--app-header-background-desktop-v3, #ccc);
+  padding: 0px 32px;
+  display: grid;
+  gap: var(--spacing-margin-medium);
+  grid-template-areas: 'logo categoryTree search icons account';
+  grid-template-columns: auto minmax(150px, max-content) 1fr auto minmax(150px, max-content);
+  align-items: center;
+}
+
+.skeleton.header.v3 .header__secondary {
+  grid-area: secondary;
+  background-color: var(--app-subheader-background-desktop-v3, var(--app-subheader-background-desktop));
+  padding: 8px 32px;
+  display: grid;
+  gap: var(--spacing-margin-medium);
+  grid-template-areas: 'opModel customPages helper';
+  grid-template-columns: minmax(150px, max-content) minmax(150px, 1fr) minmax(100px, max-content);
+}
+
+.skeleton.header.v3 .header__logo {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  max-height: 60px;
+  aspect-ratio: 187/43;
+  grid-area: logo;
+  max-width: 200px;
+  min-width: 100px;
+}
+
+.skeleton.header.v3 .header__logo>img{
+  width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+@media screen and (max-width: 960px) {
+  .skeleton.header.v3 .header__main {
+    padding: 0px 16px;
+    gap: var(--spacing-margin-xSmall);
+    grid-template-columns: auto auto 1fr auto minmax(auto, max-content);
+	}
+  .skeleton.header.v3 .header__secondary {
+    padding: 0px 16px;
+    gap: var(--spacing-margin-xSmall);
+	}
+}
+
+
+@media screen and (max-width: 576px) {
+  .skeleton.header.v3{
+    display: grid;
+    grid-template-areas:
+      'main'
+      'secondary';
+    grid-template-rows: 66px 36px;
+  }
+
+  .skeleton.header.v3 .header__main{
+    grid-area: main;
+      background-color: var(
+        --app-header-background-mobile-v3,
+        var(--app-header-background-mobile)
+      );
+      padding: 18px;
+      display: grid;
+      gap: 16px;
+      grid-template-areas: 'categoryTree logo icons';
+      grid-template-columns: 30px 1fr auto;
+      align-items: center;
+      text-align: center;
+  }
+
+  .skeleton.header.v3 .header__secondary{
+    grid-area: secondary;
+      background-color: var(
+        --app-subheader-background-mobile-v3,
+        var(--app-subheader-background-mobile)
+      );
+      display: grid;
+      grid-template-areas: 'opModel moreAbout';
+      justify-content: space-between;
+  }
+
+  .skeleton.header.v3 .header__logo{
+    max-height: 30px;
+    min-width: auto;
+    max-width: auto;
+  }
+}
+
+@media screen and (max-width: 360px) {
+  .skeleton.header.v3 .header__main{
+    padding: 18px 12px 18px 6px;
+        gap: 8px;
+  }
+}
+
+          }</style><script src="LA_ECONOMIA.js" async onload="fireFunc()"></script><script>const anlyCu = JSON.parse(window?.sessionStorage?.getItem('anly_cu'),'{}');
+
+let dlc = document.location.href;
+let drcf = document.referrer;
+
+if(anlyCu?.drcf){
+  console.log("🚀 ~ file: ScriptPersistDocRefLoc.js:11 ~ anlyCu:", anlyCu)
+  dlc = anlyCu.dlc;
+  drcf = anlyCu.drcf;
+}
+
+const all_data = { dlc, drcf};
+const anly_cu = JSON.stringify(all_data);
+
+window?.sessionStorage?.setItem('anly_cu', anly_cu);
+
+setTimeout(() => {
+  window?.sessionStorage?.removeItem('anly_cu');
+}, 3000);</script><script>(function(w, d, s, l, i) {
+        w[l] = w[l] || [];
+        w[l].push({
+          'gtm.start': new Date().getTime(),
+          event: 'gtm.js',
+        });
+        w[l].push({event:'set', 'referrer':drcf}); // now send document referrer from session storage
+        w[l].push({event:'set', 'page':dlc});
+        var f = d.getElementsByTagName(s)[0],
+          j = d.createElement(s),
+          dl = l != 'dataLayer' ? '&l=' + l : '';
+        j.async = true;
+        j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+        j.onerror = function() {
+          w[l].push({
+            'gtm.instaleap.error': new Date().getTime(),
+            message:
+              'This is controlled, it occurs when the GTM library is not loaded',
+          });
+        };
+        f.parentNode.insertBefore(j, f);
+      })(
+        window,
+        document,
+        'script',
+        'dataLayer',
+        'GTM-K44PTCT'
+      );</script><script async="" src="https://www.googletagmanager.com/gtm.js?id=GTM-KL3R4ZXF"></script><script>(function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "sxhu242afz");</script><script>window.onerror = function(message, url, line, column, error) {
+        console.log(message, url, line, column, error);
+      };</script><meta name="version" content="3.59.121" data-react-helmet><meta name="theme-color"><meta name="google-site-verification"><meta name="google-site-verification"><meta name="google-site-verification"><meta name="facebook-domain-verification"><meta name="keywords" data-react-helmet><meta name="description" data-react-helmet><script defer="defer" src="/runtimechunk~app14708f63967e0a3e8ba3.js"></script><script defer="defer" src="/vendor-7f18916ed697758d21c12a92e8ae.js"></script><script defer="defer" src="/vendor-7d0ccfb8fab6c4673f3c8a5a9981.js"></script><script defer="defer" src="/vendor-044cfa3731818d9fc548b84aa6f8.js"></script><script defer="defer" src="/vendor-40b9bced0c54043a026b06b29394.js"></script><script defer="defer" src="/vendor-4465e6201101a04ca13443f3250d.js"></script><script defer="defer" src="/vendor-5e9864d481802963311281027148.js"></script><script defer="defer" src="/vendor-c790b7ff74e6aca399702cd2c9b5.js"></script><script defer="defer" src="/vendor-f79110f3f9684e490b2f14938e05.js"></script><script defer="defer" src="/vendor-a747056d009926e93bab515f2b77.js"></script><script defer="defer" src="/vendor-4731faf47d9acd6071cfd74e1d22.js"></script><script defer="defer" src="/vendor-3280b492aa9dbff6b006d4cfdb5e.js"></script><script defer="defer" src="/vendor-19f9d112bfb72a6007f7258b8b06.js"></script><script defer="defer" src="/vendor-bd5a0d77c2a9fd0480d59ab6b2c3.js"></script><script defer="defer" src="/vendor-07eb3cba83be0cf655fb132b83f8.js"></script><script defer="defer" src="/vendor-9e67523e27f0cfaa5c911eabeb66.js"></script><script defer="defer" src="/vendor-2709e9f49813688a0639711c3f93.js"></script><script defer="defer" src="/vendor-d7b3dec3d4d4edebc9548de7035f.js"></script><script defer="defer" src="/vendor-e5bca7e4272cb6212e551cea4a74.js"></script><script defer="defer" src="/vendor-aeaa15b0c171defdf440a3936f55.js"></script><script defer="defer" src="/vendor-6dc03ec60b96cdb489039800949e.js"></script><script defer="defer" src="/vendor-c0cdf3decf4b3f1a40778d3a7827.js"></script><script defer="defer" src="/vendor-c092ac97a576b5faf39b17d7f57f.js"></script><script defer="defer" src="/6632f1885bb48c23eb355a10.js"></script><script defer="defer" src="/app256ae0afb824bcd0e0f6.js"></script></head><body><noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-K44PTCT" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript><div id="recaptcha-container"></div><div id="app"><div class="skeleton pre-app"><div class="skeleton header v3"><div class="skeleton header__main"><div class="skeleton header__logo"><img class="skeleton logo__img" src="https://ecommerce-image-catalog.s3.us-east-1.amazonaws.com/la-ecomomia/logoeco_resized+(1).png" alt=" logo"></div></div><div class="skeleton header__secondary"></div></div><div class="skeleton main-loader"><img src="cart.png" width="192" height="176" alt="" fetchpriority="high"/></div></div></div></body></html>

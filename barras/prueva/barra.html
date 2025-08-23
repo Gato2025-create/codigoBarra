@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Lector de Código de Barras - Inventario</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      max-width: 700px;
+      margin: 2rem auto;
+      padding: 1rem;
+      background: #f9f9f9;
+      color: #333;
+    }
+    input, button {
+      font-size: 1.1rem;
+      padding: 0.5rem;
+      margin-right: 0.5rem;
+    }
+    button {
+      cursor: pointer;
+    }
+    pre {
+      background: #fff;
+      border: 1px solid #ccc;
+      padding: 1rem;
+      white-space: pre-wrap;
+      word-wrap: break-word;
+      margin-top: 1rem;
+      max-height: 400px;
+      overflow-y: auto;
+    }
+    #productoImagen {
+      max-width: 300px;
+      height: auto;
+      display: none; /* Oculta la imagen por defecto */
+      margin: 1rem 0;
+      border: 1px solid #ccc;
+      padding: 4px;
+      background: #fff;
+    }
+  </style>
+</head>
+<body>
+  <h1>Lector de Código de Barras - Inventario</h1>
+
+  <label for="codigoInput">Escanea o ingresa el código:</label><br />
+  <input type="text" id="codigoInput" placeholder="Código de barras" autofocus />
+  <button id="buscarBtn">Buscar y Guardar</button>
+
+  <!-- Imagen del producto -->
+  <img id="productoImagen" alt="Imagen del producto" />
+
+  <pre id="infoProducto" aria-live="polite" role="region"></pre>
+
+  <script>
+    // Inventario simulado con campo de imagen
+    const inventario = [
+      {
+        nombre_comercial: "Paracetamol 500 mg",
+        nombre_generico: "Paracetamol",
+        forma_farmaceutica: "Tabletas",
+        concentracion: "500 mg",
+        presentacion: "Caja con 20 tabletas",
+        laboratorio: "Genéricos S.A.",
+        sku: "PAR500TAB20",
+        codigo_barras: "7750936003288",
+        lote: "A12345",
+        caducidad: "08/2027",
+        existencia: 50,
+        precio_compra: 12.0,
+        precio_venta: 20.0,
+        ubicacion: "Estante 2, Nivel B",
+        indicaciones: "Analgésico y antipirético",
+        observaciones: "No administrar a menores de 6 años sin indicación médica",
+        imagen: "azimtromicina.png"  // <-- Aquí la imagen relacionada
+      }
+    ];
+
+    // Simula un "registro" de códigos en consola
+    function registrarCodigo(codigo) {
+      const timestamp = new Date().toLocaleString();
+      console.log(`[${timestamp}] Código escaneado: ${codigo}`);
+      // Aquí podrías agregar código para enviar a un servidor o guardar localmente
+    }
+
+    // Buscar producto por código de barras
+    function buscarProducto(codigo) {
+      return inventario.find(p => p.codigo_barras === codigo) || null;
+    }
+
+    // Mostrar la info del producto en el <pre>
+    function mostrarInfoProducto(producto) {
+      return `
+Nombre Comercial       : ${producto.nombre_comercial}
+Nombre Genérico        : ${producto.nombre_generico}
+Forma Farmacéutica     : ${producto.forma_farmaceutica}
+Concentración          : ${producto.concentracion}
+Presentación           : ${producto.presentacion}
+Laboratorio            : ${producto.laboratorio}
+Código Interno / SKU   : ${producto.sku}
+Código de Barras       : ${producto.codigo_barras}
+Lote                   : ${producto.lote}
+Fecha de Caducidad     : ${producto.caducidad}
+Cantidad en Existencia : ${producto.existencia} cajas
+Precio de Compra       : $${producto.precio_compra.toFixed(2)} MXN
+Precio de Venta        : $${producto.precio_venta.toFixed(2)} MXN
+Ubicación en Almacén   : ${producto.ubicacion}
+Indicaciones           : ${producto.indicaciones}
+Observaciones          : ${producto.observaciones}
+      `.trim();
+    }
+
+    // Manejo de evento click y Enter
+    const inputCodigo = document.getElementById('codigoInput');
+    const btnBuscar = document.getElementById('buscarBtn');
+    const infoProducto = document.getElementById('infoProducto');
+    const imgProducto = document.getElementById('productoImagen');
+
+    function procesarCodigo() {
+      const codigo = inputCodigo.value.trim();
+      if (!codigo) {
+        alert("⚠️ El código está vacío. Intenta nuevamente.");
+        return;
+      }
+      const producto = buscarProducto(codigo);
+      if (producto) {
+        registrarCodigo(codigo);
+        infoProducto.textContent = mostrarInfoProducto(producto);
+        // Mostrar la imagen del producto
+        imgProducto.src = producto.imagen;
+        imgProducto.style.display = "block";
+        imgProducto.alt = `Imagen de ${producto.nombre_comercial}`;
+        inputCodigo.value = "";
+        inputCodigo.focus();
+      } else {
+        alert(`❌ Producto con código ${codigo} no encontrado.`);
+        infoProducto.textContent = "";
+        // Ocultar imagen si no se encuentra producto
+        imgProducto.style.display = "none";
+        imgProducto.src = "";
+        imgProducto.alt = "";
+        inputCodigo.value = "";
+        inputCodigo.focus();
+      }
+    }
+
+    btnBuscar.addEventListener('click', procesarCodigo);
+    inputCodigo.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter') procesarCodigo();
+    });
+  </script>
+</body>
+</html>

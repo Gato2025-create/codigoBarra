@@ -1,0 +1,89 @@
+body{
+    overflow-x: hidden;
+    font-size: 100%;
+}
+
+.navAG{
+
+    width: 100%; background-color: black;
+}
+
+.navAG > div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.logoAG img{
+    margin-left: 10%;
+    height: auto; 
+    width: 90%;
+}
+
+a{
+    text-decoration: none;
+    color: white;
+}
+
+.opc1 a{
+    font-size: 1vw;
+    font-family: 'Barlow', sans-serif;
+    font-weight: 500;
+    color: #8F8F8F; 
+}
+
+.opc1 a:hover{
+    color: white;
+}
+
+.opc2{
+    text-align: center;
+    width: 10vw; 
+    font-family: 'Barlow', sans-serif;
+    font-weight: 500;
+}
+.opc2 a{
+    font-size: 0.9vw; color: #8F8F8F;
+}
+
+.opc2 a:hover{
+    color: white;
+}
+
+.opc3 a{
+    color:white; 
+    display: contents;
+}
+
+.opc3 a img{
+    width: 35%; margin: auto 0;
+}
+
+.opc3 span{
+    width: 20%;
+    font-size: 0.9vw;
+    text-align: center;
+    position: relative; 
+    bottom: 25%; 
+    background-color: white; 
+    color: black;
+}
+
+.loginAG{
+    border-radius: 1vw;
+    background-color: #24CAFF;
+    padding: 0% 8%;
+    font-size: 1.3vw;
+    font-family: 'Barlow', sans-serif;
+    font-weight: 600;
+}
+
+.loginAG a{
+    color: white;
+}
+
+.barra_nav > ul,li{
+    float: left;
+ 
+}
