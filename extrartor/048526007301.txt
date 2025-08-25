@@ -1,0 +1,57 @@
+Farmacia mi Perú 1 multiservicios
+Toggle navigation
+0
+0
+0
+75
+28
+3332
+User Image 
+MENU DE NAVEGACIÓN
+ Pantalla Principal
+ Mantenimiento
+ Movimientos
+ Facturación Electrónica
+ Cuentas
+ Reportes
+ Tutoriales
+ Ver Sitio
+Productos y Servicios Listado
+ 
+Productos Activos
+Productos Dados de Baja
+Servicios Activos
+Servicios Dados de Baja
+
+Registros
+
+50
+048526007301
+
+Código Barra	Nombre del Productos	U.M	P. Caja	P. Unit	P. Blister	Stock Unitario	Laboratorio	Opciones
+048526007301	MASAJEADOR CEPILLO DEDAL EN SILICONA +3 MESES	UND	0.00	14.00	0.00	0	ÑUBY	
+Anterior1Siguiente
+×
+DESCRIPCION DEL PRODUCTO
+
+MASAJEADOR CEPILLO DEDAL EN SILICONA +3 MESES
+ Codigo de Barra:048526007301
+ Principio Activo:
+ Fecha Caduca:2027-05-30
+ Precio Costo Caja:0
+ Precio Venta Caja: 0
+ Unidades x Caja:0
+ Precio Costo Unitario:9.42
+ PVP1:14
+ PVP2:0
+ PVP3:0
+Numero de Lote: 201113
+Fecha de Venci. (201113): 2027-05-30
+ Precio Blister:0
+ Unidades x Blister:0
+ Stock Total Unidades: 0
+ Laboratorio: ÑUBY
+ Para que Sirve:
+ Ubicacion: SU1
+ Comisión:0%
+Software Pharma Express © 2023. Derechos Reservados by SELECT PERU
